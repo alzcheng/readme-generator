@@ -17,6 +17,11 @@ const questions = [
   },
   {
     type: "input",
+    message: "What are the instructions to install your project?",
+    name: "inputInstallation",
+  },
+  {
+    type: "input",
     message: "what should be the usage information for your project?",
     name: "inputUsage",
   },
@@ -49,11 +54,6 @@ const questions = [
   },
   {
     type: "input",
-    message: "What is your Github link?",
-    name: "inputGithubLink",
-  },
-  {
-    type: "input",
     message: "What is your email address?",
     name: "inputEmail",
   },
@@ -78,9 +78,17 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      let fileName = `${answers.inputTitle}_ReadMe.md`;
-      let data = generateMarkdown(answers);
-      writeToFile(fileName, data);
+      if (answers.inputLicense === "Apache License 2.0") {
+        answers.inputBadge =
+          "https://img.shields.io/badge/License-Apache_2.0-red";
+      } else if (answers.inputLicense === "GNU General Public License v3.0") {
+        answers.inputBadge =
+          "https://img.shields.io/badge/License-GNU_3.0-blue";
+      } else {
+        answers.inputBadge = "https://img.shields.io/badge/License-MIT-green";
+      }
+      console.log(answers);
+      writeToFile("README.md", generateMarkdown(answers));
     })
     .catch((error) => {
       if (error) throw error;
