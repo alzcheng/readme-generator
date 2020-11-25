@@ -1,5 +1,6 @@
 const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require("inquirer");
+const fs = require("fs");
 
 // array of questions for user
 const questions = [
@@ -53,13 +54,18 @@ const questions = [
   },
   {
     type: "input",
-    message: "what is your email address?",
+    message: "What is your email address?",
     name: "inputEmail",
   },
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) throw err;
+    console.log("ReadMe created!");
+  });
+}
 
 // function to initialize program
 function init() {
@@ -72,7 +78,9 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      console.log(answers);
+      let fileName = `${answers.inputTitle}_ReadMe.md`;
+      let data = generateMarkdown(answers);
+      writeToFile(fileName, data);
     })
     .catch((error) => {
       if (error) throw error;
