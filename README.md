@@ -1,4 +1,4 @@
-# asdf  ![](https://img.shields.io/badge/License-Apache_2.0-red)
+# ReadMe Generator  ![](https://img.shields.io/badge/License-MIT-green)
   ## Table of Content
   * [Description](##Description)
   * [Installation Instructions](##Installation-Instructions)
@@ -8,23 +8,23 @@
   * [Questions](##Questions)
   
   ## Description
-  asdf
+  This is a program that asks the user for information in the terminal and returns a modified ReadMe.md file. 
 
   ## Installation Instructions
-  asdf
+  Run the index.js file in the javascript environment to begin the program.
 
   ## Usage Information
-  asdf
+  When the index.js file is executed, the user will enter in the information related to the project.  This includes the description of project, the installation instructions, the usage information, the contribution guidelines, and test instructions.  Then, the user will enter the their GitHub account username and email so that those that have questions about the project can contact the user.  
 
   ## Contribution Guidelines
-  adsf
+  This project is subjected to the contribution guidelines as stated in [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md). 
 
   ## Test Instructions
-  asdf
+  After modifying the questions, run the index. js to run the questions and generate a ReadMe file to verify changes. 
 
   ## License
-  This project and the application(s) hereinto is(are) covered under the Apache License 2.0.  
+  This project and the application(s) hereinto is(are) covered under the MIT License.  
   
   ## Questions
-  For any questions about this project, please first visit my Github repo [here](https://github.com/asdf). 
-  If the answers are not found in my repo, you can email me directly at <asdf>.
+  For any questions about this project, please first visit my Github repo [here](https://github.com/alzcheng). 
+  If the answers are not found in my repo, you can email me directly at <albertzcheng@gmail.com>.

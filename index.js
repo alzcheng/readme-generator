@@ -22,7 +22,7 @@ const questions = [
   },
   {
     type: "input",
-    message: "what should be the usage information for your project?",
+    message: "What should be the usage information for your project?",
     name: "inputUsage",
   },
 
@@ -88,7 +88,7 @@ function init() {
         answers.inputBadge = "https://img.shields.io/badge/License-MIT-green";
       }
       console.log(answers);
-      writeToFile("README.md", generateMarkdown(answers));
+      writeToFile(`${answers.inputTitle}_README.md`, generateMarkdown(answers));
     })
     .catch((error) => {
       if (error) throw error;
