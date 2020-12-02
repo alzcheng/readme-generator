@@ -1,5 +1,6 @@
-// function to generate markdown for README
+// This function is used to generate markdown for README
 function generateMarkdown(data) {
+  //Uses template literals to create the ReadME
   return `# ${data.inputTitle}  ![](${data.inputBadge})
   ## Table of Content
   * [Description](##Description)

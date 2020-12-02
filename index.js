@@ -127,15 +127,17 @@ const questions = [
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) throw err;
+    //when ReadMe is successfully created, show in terminal
     console.log("ReadMe created!");
   });
 }
 
-// function to initialize program
+// This function is used initialize program and start the questions
 function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
+      //Select the badges to be placed for the licenses
       if (answers.inputLicense === "Apache License 2.0") {
         answers.inputBadge =
           "https://img.shields.io/badge/License-Apache_2.0-red";
@@ -145,7 +147,7 @@ function init() {
       } else {
         answers.inputBadge = "https://img.shields.io/badge/License-MIT-green";
       }
-      //console.log(answers);
+      //Generate a README with the project's name and the answers appropriately
       writeToFile(`${answers.inputTitle}_README.md`, generateMarkdown(answers));
     })
     .catch((error) => {
@@ -153,5 +155,5 @@ function init() {
     });
 }
 
-// function call to initialize program
+// This function is called to initialize program
 init();

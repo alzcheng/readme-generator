@@ -1,4 +1,4 @@
-# Example Project - Hello World  ![](https://img.shields.io/badge/License-Apache_2.0-red)
+# Example - Weather Dashboard  ![](https://img.shields.io/badge/License-MIT-green)
   ## Table of Content
   * [Description](##Description)
   * [Installation Instructions](##Installation-Instructions)
@@ -8,22 +8,22 @@
   * [Questions](##Questions)
   
   ## Description
-  When this is executed, it will print "Hello World"
+  This is a weather dashboard that when you enter in a city, it will display the current weather of the city as well as the 5 day forecast.
 
   ## Installation Instructions
-  Make sure that the js file is in the right folder.  Use node to execute the file. 
+  Make sure that the files are in the right folder before executing.
 
   ## Usage Information
-  When you use node to execute the file, a prompt will come up to ask for confirmation.  Click yes.
+  Once the project is ran, then you input a valid city into the search bar to get the weather data and forecast.
 
   ## Contribution Guidelines
-  This project adheres to the [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md).
+  This project adheres to the Contributor's Convenant 2.0 for any contributions.
 
   ## Test Instructions
-  When a change is made, run the program to test results. 
+  For any new city, enter into the search bar to see if it is valid.
 
   ## License
-  This project and the application(s) hereinto is(are) covered under the Apache License 2.0.  
+  This project and the application(s) hereinto is(are) covered under the MIT License.  
   
   ## Questions
   For any questions about this project, please first visit my Github repo [here](https://github.com/alzcheng). 
