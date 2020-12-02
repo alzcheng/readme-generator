@@ -2,39 +2,87 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-// array of questions for user
+// Array of questions for user
 const questions = [
   //Basic questions for the main section
   {
     type: "input",
     message: "What is the title of your project?",
     name: "inputTitle",
+    validate: (input) => {
+      if (!isNaN(parseInt(input)) || input === "") {
+        return "Please enter a string.";
+      } else {
+        console.log("\nData received.");
+        return true;
+      }
+    },
   },
   {
     type: "input",
     message: "What would be a good description for your project?",
     name: "inputDescription",
+    validate: (input) => {
+      if (!isNaN(parseInt(input)) || input === "") {
+        return "Please enter a string.";
+      } else {
+        console.log("\nData received.");
+        return true;
+      }
+    },
   },
   {
     type: "input",
     message: "What are the instructions to install your project?",
     name: "inputInstallation",
+    validate: (input) => {
+      if (!isNaN(parseInt(input)) || input === "") {
+        return "Please enter a string.";
+      } else {
+        console.log("\nData received.");
+        return true;
+      }
+    },
   },
   {
     type: "input",
     message: "What should be the usage information for your project?",
     name: "inputUsage",
+    validate: (input) => {
+      if (!isNaN(parseInt(input)) || input === "") {
+        return "Please enter a string.";
+      } else {
+        console.log("\nData received.");
+        return true;
+      }
+    },
   },
 
   {
     type: "input",
     message: "What are the contribution guidelines for your project?",
     name: "inputContribute",
+    validate: (input) => {
+      if (!isNaN(parseInt(input)) || input === "") {
+        return "Please enter a string.";
+      } else {
+        console.log("\nData received.");
+        return true;
+      }
+    },
   },
   {
     type: "input",
     message: "What are the testing instructions for your project?",
     name: "inputTest",
+    validate: (input) => {
+      if (!isNaN(parseInt(input)) || input === "") {
+        return "Please enter a string.";
+      } else {
+        console.log("\nData received.");
+        return true;
+      }
+    },
   },
   //Additional questions to provide links and such to different sections
   {
@@ -51,15 +99,31 @@ const questions = [
     type: "input",
     message: "What is your Github username?",
     name: "inputGithubName",
+    validate: (input) => {
+      if (!isNaN(parseInt(input)) || input === "") {
+        return "Please enter a string.";
+      } else {
+        console.log("\nData received.");
+        return true;
+      }
+    },
   },
   {
     type: "input",
     message: "What is your email address?",
     name: "inputEmail",
+    validate: (input) => {
+      if (!isNaN(parseInt(input)) || input === "") {
+        return "Please enter a string.";
+      } else {
+        console.log("\nData received.");
+        return true;
+      }
+    },
   },
 ];
 
-// function to write README file
+// This function is used to create a README files
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) throw err;
@@ -69,12 +133,6 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-  //Need to gather data from the questions
-  //Need to create a list of licenses that I can choose for the project and adding the badge tile on the top
-  //Need to create a prompt to enter the Github username
-  //Need to create a prompt for email and add to the section with questions
-  //Linking to access to Table of contents
-
   inquirer
     .prompt(questions)
     .then((answers) => {
@@ -87,7 +145,7 @@ function init() {
       } else {
         answers.inputBadge = "https://img.shields.io/badge/License-MIT-green";
       }
-      console.log(answers);
+      //console.log(answers);
       writeToFile(`${answers.inputTitle}_README.md`, generateMarkdown(answers));
     })
     .catch((error) => {
